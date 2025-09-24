@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
             picks1.classList.remove("hidden");
             picks1.classList.add("visible");
             picks1.innerHTML = `
-                <img src="IMG_4167.JPG" width="200">
-                <img src="IMG_4167.JPG" width="200">
+                <img src="imagenes/IMG_4167.JPG" width="200">
+                <img src="imagenes/IMG_4167.JPG" width="200">
             `;
         } else {
             picks1.classList.add("hidden");
@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
             picks2.classList.remove("hidden");
             picks2.classList.add("visible");
             picks2.innerHTML = `
-                    <img src="IMG_4012.JPG" width="200">
-                    <img src="IMG_4012.JPG" width="200">
+                    <img src="imagenes/IMG_4012.JPG" width="200">
+                    <img src="imagenes/IMG_4012.JPG" width="200">
             `;
         } else {
             picks2.classList.add("hidden");
@@ -68,4 +68,66 @@ document.addEventListener("DOMContentLoaded", () => {
             picks2.innerHTML = "";
         }
     });
+});
+
+// Dark Mode
+const modoBtn = document.getElementById("modo");
+
+modoBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+
+// Contador de likes
+let count = 0;
+const likeBtn = document.getElementById("likeBtn");
+const likeCount = document.getElementById("likeCount");
+
+likeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    count++;
+    likeCount.textContent = count;
+    console.log(likeCount)
+});
+
+
+// Buscador de artículos
+const buscarBtn = document.getElementById("buscar");
+
+buscarBtn.addEventListener("click", () => {
+    const termino = prompt("Escribe tu búsqueda:");
+    if (termino) {
+        const tarjetas = document.querySelectorAll(".side-article, .main-article");
+        tarjetas.forEach(tarjeta => {
+            const texto = tarjeta.innerText.toLowerCase();
+            if (texto.includes(termino.toLowerCase())) {
+                tarjeta.classList.remove("ocultar");
+            } else {
+                tarjeta.classList.add("ocultar");
+            }
+        });
+    }
+});
+
+// Galería con hover
+const seeAll = document.getElementById("seeAll");
+const galeriaImg = document.getElementById("galeriaImg");
+
+const imagenes = [
+    "imagenes/IMG_3901.JPG",
+    "imagenes/IMG_4012.JPG",
+    "imagenes/IMG_4167.JPG"
+];
+
+let index = 0;
+let intervalo;
+
+seeAll.addEventListener("mouseover", () => {
+    intervalo = setInterval(() => {
+        index = (index + 1) % imagenes.length;
+        galeriaImg.src = imagenes[index];
+    }, 2000);
+});
+
+seeAll.addEventListener("mouseout", () => {
+    clearInterval(intervalo);
 });

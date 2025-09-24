@@ -13,6 +13,26 @@ body {
     line-height: 1.7;
     padding: 20px;
 }
+/*Estilos agregados para el boton claro y obscuro*/
+.dark {
+  background-color: black !important;
+  color: white !important;
+}
+
+.dark .container {
+  background-color: #222;
+  color: white;
+}
+
+.dark .menu li a {
+  color: white;
+}
+
+
+/*Buscador de articulos*/
+.ocultar {
+  display: none !important;
+}
 
 .container {
     background-color: white;
@@ -412,9 +432,9 @@ h1 {
 
 .hidden {
   display: none;
-};
+}
 
 .visible {
   display: block;
   margin: 20px 0;
-};
+}
