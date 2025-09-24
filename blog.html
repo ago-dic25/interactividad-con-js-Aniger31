@@ -3,70 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Spot</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <title>BlogSpot</title>
     <link rel="stylesheet" href="estilos.css">
-    <!--<script src="https://kit.fontawesome.com/6d11003e79.js" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="">
-        <nav>
-            
-            <button id="menu">Menu</button>
-            <ul>
-                <li>
-                    <a href="#">Articles</a>
-                </li>
-                <li>
-                    <a href="#">Radio</a>
-                </li>
-                <li>
-                    <a href="#">Podcast</a>
-                </li>
-                 <li>
-                    <a href="#">Crear Cuenta / Registro</a>
-                </li>
-            </ul>
-            <button id="buscar">
-                Buscar
-            </button>
-        </nav>
-    </header>
-    
-    <main>
-        <section>
-            <div class="tarjeta" id="bestOfTheWeek">
-                <h1>Best of the week</h1>
-                <a href="#">See all posts</a>
+<div class="container">
+    <div class="navbar">
+        <div class="logo">BlogSpot</div>
+        <ul class="menu">
+            <li><a href="#">Articles <span class="count">4600</span></a></li>
+            <li><a href="#">Radio <span class="count">6</span></a></li>
+            <li><a href="#">Podcast <span class="count">46</span></a></li>
+            <li><a href="#">Be a writer</a></li>
+            <li><a href="#">Talk to us</a></li>
+            <li><button id="buscar">Buscar</button></li>
+            <!--1. Boton Modo obscuro /claro-->
+            <li><button id="modo">🌙/☀️</button></li>
+
+        </ul>
+    </div>
+
+    <div class="header-section">
+        <h1>Best of the week</h1>
+        <a href="#" class="see-all">See all posts <i class="fas fa-arrow-right"></i></a>
+        <div id="recommendations" class="hidden"></div>
+    </div>
+
+    <div class="grid">
+        <div class="main-article">
+            <img src="imagenes/IMG_3901.JPG" class="main-image">
+            <div class="article-content">
+                <div class="article-date">Aug 22,2025</div>
+                <div class="category">Travel</div>
             </div>
-            <div class="tarjeta" id="travel">
-                <span>Sep 06, 2022</span>
-                <button>Travel</button>
-                <img src="imagenes/arnel-hasanovic-MNd-Rka1o0Q-unsplash.jpg" width="50%" alt="">
-                <div class="info">
-                    <span>Travel</span>
-                    <h2>TravelPro</h2>
+            <div class="article-title-container">
+                <h2 class="article-title">Get to your dream destinations with Travel Pro</h2>
+            </div>
+            <a href="#" class="main-article-arrow" id="mas">
+                <i class="fa-solid fa-plus"></i>
+            </a>
+            <a href="#" class="main-article-arrow" id="likeBtn">
+            👍🏼
+            </a>
+            <span id="likeCount">0</span>
+
+            
+        </div>
+
+        <div class="side-articles">
+            <div class="side-article">
+                <img src="imagenes/IMG_4167.JPG" alt="Music concert" class="side-image">
+                <div class="side-content">
+                    <div class="category">Music</div>
+                    <h3 class="side-title">The Rise of Independent Artists</h3>
+                    <a href="#" class="read-more">See all picks 
+                        <i class="fas fa-arrow-right"></i>
+                        <div id="picks1" class="hidden"></div>
+                    </a>
+                 
                 </div>
             </div>
-        </section>
-        <aside>
-            <div class="tarjeta" id="ads">
-                <span>ADS</span>
-                <button>+</button>
-                <span>Become a podcaster</span>
-                <h3>Real talk</h3>
+
+            <div class="side-article">
+                <img src="imagenes/IMG_4012.JPG" class="side-image">
+                <div class="side-content">
+                    <div class="category">Fashion</div>
+                    <h3 class="side-title">Autumn 2025 Trends: What's In and What's Out</h3>
+                    <a href="#" class="read-more">See all picks <i class="fas fa-arrow-right"></i>
+                        <div id="picks2" class="hidden"></div>
+                    </a>
+                    
+                </div>
             </div>
-            <div  class="tarjeta" id="seeAll">
-                <img src="imagenes/soundtrap-n30_i7mx62o-unsplash.jpg" alt="" width="50%">
-                <button>See all pics</button>
-            </div>
-        </aside>
-    </main>
+        </div>
+    </div>
+
+    <div class="ads-section">
+        <div class="ad">
+            <span class="ad-tag">ADS</span>
+            <h3 class="ad-title">Become A BROADCAST MEMBER</h3>
+            <p class="ad-description">Real talk in a corporate world. Join our exclusive community of thought leaders.</p>
+            <a href="#" class="ad-button">Learn more</a>
+        </div>
+
+        <div class="ad">
+            <span class="ad-tag">ADS</span>
+            <h3 class="ad-title">Travel Pro</h3>
+            <p class="ad-description">Get to your dream destinations with our premium travel services and exclusive deals.</p>
+            <a href="#" class="ad-button">Explore now</a>
+        </div>
+    </div>
+
+    <!--Galeria hover-->
+    <div id="seeAll" class="footer-section">
+        <a href="#" class="see-all">See all pics <i class="fas fa-arrow-right"></i></a>
+        <img id="galeriaImg" src="imagenes/IMG_3901.JPG" width="200">
+    </div>
+</div>
 </body>
 <script src="index.js"></script>
 </html>
